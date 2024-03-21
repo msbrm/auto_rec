@@ -66,8 +66,8 @@ def main(args):
             optimizer.step()
             if R0:
                 print(loss)
-                torch.save(model.cpu(), './model.pth')
-                model.to(DEVICE)
+                torch.save(model.module, './model.pth')
+                # model.to(DEVICE)
 
 
 if __name__ == '__main__':
